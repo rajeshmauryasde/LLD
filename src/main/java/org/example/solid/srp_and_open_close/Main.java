@@ -1,13 +1,27 @@
 package org.example.solid.srp_and_open_close;
 
+import org.example.solid.srp_and_open_close.emp.Intern;
+import org.example.solid.srp_and_open_close.emp.Employee;
+import org.example.solid.srp_and_open_close.emp.FullTimeEmployee;
+import org.example.solid.srp_and_open_close.emp.PartTimeEmployee;
+import org.example.solid.srp_and_open_close.factory.TaxCalculatorFactory;
+import org.example.solid.srp_and_open_close.tax.TaxCalculator;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        Employee fullTimeEmployee = new FullTimeEmployee("John Doe", 1000);
-        Employee contractor = new Contractor("Jane Doe", 500);
-        Employee partTimeEmployee = new PartTimeEmployee("Jack Doe", 500);
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new FullTimeEmployee("John Doe", 1000));
+        employees.add(new Intern("Jane Doe", 500));
+        employees.add(new PartTimeEmployee("Jack Doe", 500));
 
-        System.out.println(TaxCalculator.calculateTax(fullTimeEmployee));
-        System.out.println(TaxCalculator.calculateTax(contractor));
-        System.out.println(TaxCalculator.calculateTax(partTimeEmployee));
+        for (Employee employee : employees) {
+            TaxCalculator taxCalculator = TaxCalculatorFactory.getTaxCalculator(employee);
+            System.out.println(taxCalculator.calculateTax(employee));
+        }
+
+
     }
 }

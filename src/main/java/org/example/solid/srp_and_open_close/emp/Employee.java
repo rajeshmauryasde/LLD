@@ -1,4 +1,4 @@
-package org.example.solid.srp_and_open_close;
+package org.example.solid.srp_and_open_close.emp;
 
 import lombok.Getter;
 import lombok.Setter;
