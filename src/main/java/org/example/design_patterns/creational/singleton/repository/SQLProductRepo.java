@@ -12,7 +12,11 @@ public class SQLProductRepo implements ProductRepo {
 
     public static SQLProductRepo getInstance() {
         if (Objects.isNull(instance)) {
-            instance = new SQLProductRepo();
+            synchronized (ProductRepo.class) {
+                if (Objects.isNull(instance)) {
+                    instance = new SQLProductRepo();
+                }
+            }
         }
         return instance;
     }
