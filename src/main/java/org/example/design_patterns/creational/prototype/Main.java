@@ -7,7 +7,7 @@ import org.example.design_patterns.creational.prototype.registry.Registry;
 
 public class Main {
     public static void main(String[] args) {
-        Registry registry = new Registry();
+        Registry registry = Registry.getInstance();
         Movie movie = (Movie) registry.createItem("Movie");
         movie.setTitle("Sholay");
         movie.setDirector("Vasu");

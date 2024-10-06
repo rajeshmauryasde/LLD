@@ -6,13 +6,22 @@ import org.example.design_patterns.creational.prototype.pojo.Movie;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class Registry {
     Map<String, Item> itemRegistry;
+    private static volatile Registry instance;
 
-    public Registry() {
+    private Registry() {
         itemRegistry = new HashMap<>();
         loadItems();
+    }
+
+    public static Registry getInstance() {
+        if (Objects.isNull(instance)) {
+            instance = new Registry();
+        }
+        return instance;
     }
 
     private void loadItems() {
