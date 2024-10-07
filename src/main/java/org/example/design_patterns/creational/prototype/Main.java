@@ -1,7 +1,6 @@
 package org.example.design_patterns.creational.prototype;
 
 import org.example.design_patterns.creational.prototype.pojo.Book;
-import org.example.design_patterns.creational.prototype.pojo.Item;
 import org.example.design_patterns.creational.prototype.pojo.Movie;
 import org.example.design_patterns.creational.prototype.registry.Registry;
 
