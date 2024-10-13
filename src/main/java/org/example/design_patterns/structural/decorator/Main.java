@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Cappuccino: " + cappuccino.cost());
 
         Coffee latteWithChocolate = new ChocolateDecorator(latte);
-        System.out.println("Latte with choclate: " + latteWithChocolate.cost());
+        System.out.println("Latte with chocolate: " + latteWithChocolate.cost());
 
         Coffee cappuccinoWithIceCream = new IceCreamDecorator(cappuccino);
         System.out.println("Cappuccino with Ice cream: " + cappuccinoWithIceCream.cost());
